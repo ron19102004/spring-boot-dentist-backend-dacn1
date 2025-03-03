@@ -1,0 +1,30 @@
+server:
+  port: 8080
+redis:
+  port: 8081
+  host: localhost
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/dentist_be?useSSL=false&serverTimezone=UTC
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update  # Chế độ cập nhật bảng (create, update, validate, none)
+    show-sql: true      # Hiển thị SQL trong console
+    properties:
+      hibernate:
+        format_sql: true  # Định dạng SQL cho dễ đọc
+security:
+  key:
+    access-token:
+      public-key-path: keys/access-token-public-key.key
+      private-key-path: keys/access-token-private-key.key
